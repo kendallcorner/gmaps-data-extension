@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Get Google Maps KML",
+  "version": "1.0.0",
+  "description": "Allows you to export your google maps kml data",
+  "permissions": [
+    "<all_urls>",
+    "activeTab",
+    "cookies",
+    "contextMenus",
+    "contextualIdentities",
+    "history",
+    "idle",
+    "management",
+    "storage",
+    "tabs",
+    "webRequestBlocking",
+    "webRequest"
+  ],
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": "img/ccmaps.svg",
+    "default_title": "Get Maps KML"
+  },
+  "background": {
+    "scripts": ["js/mapsBackground.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/content-script.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
