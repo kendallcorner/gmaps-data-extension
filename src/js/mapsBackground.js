@@ -1,9 +1,7 @@
 browser.browserAction.onClicked.addListener(clickListener);
 
 async function clickListener() {
-  console.log("button clicked")
   newTab = await browser.tabs.create({url: "http://example.com"});
-  console.log(newTab)
   //browser.tabs.sendMessage(newTab.id, "run script, please")
 
   var startDate = new Date(2020,2,28); //months 0-11!
